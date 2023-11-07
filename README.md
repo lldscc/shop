@@ -1,35 +1,19 @@
-# vue-rabbit
+# 黑马程序员前端Vue3小兔鲜电商项目
 
-This template should help get you started developing with Vue 3 in Vite.
 
-## Recommended IDE Setup
+## 项目介绍
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+[Vue3小兔鲜项目视频](https://www.bilibili.com/video/BV1Ac411K7EQ?p=22&spm_id_from=pageDriver&vd_source=dc3fbe24cdee834b2736194bdadc19e7)
 
-## Customize configuration
+1. Vue3入门 
+2. Pinia和项目起步 
+3. Home页和一级分类
+4. 二级分类和详情
+5. 登录和本地购物车 
+  6. 接口购物车和支付 
+  7. 用户中心和拓展课程
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## 进度
 
-## Project Setup
++ 2023.11.7——`项目搭建`
 
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
