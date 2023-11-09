@@ -1,18 +1,7 @@
 <script setup>
-// 获取数据
-import {getCategoryAPI}from '@/apis/layout'
-import { onMounted,ref } from 'vue';
+import { useCategoryStore } from '@/stores/category'
+const categoryStore = useCategoryStore()
 
-const categoryList = ref([])  //存放数据
-const getCategory = async() =>{
-  const res = await getCategoryAPI()
-  console.log(res)
-  categoryList.value = res.result
-}
-// 挂载时发起
-onMounted(() =>{
-  getCategory()
-})
 </script>
 
 <template>
@@ -23,7 +12,7 @@ onMounted(() =>{
       </h1>
       <ul class="app-header-nav">
         <!-- 遍历数据 -->
-        <li class="home" v-for="item in categoryList" key="item.id">
+        <li class="home" v-for="item in categoryStore.categoryList" key="item.id">
           <RouterLink to="/">{{item.name}}</RouterLink>
         </li>
        
