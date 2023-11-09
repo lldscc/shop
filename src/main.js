@@ -7,10 +7,10 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 // 测试API
-import { getCategory } from './apis/testAPI'
-getCategory().then(res =>{
-    console.log(res)
-})
+// import { getCategory } from './apis/testAPI'
+// getCategory().then(res =>{
+//     console.log(res)
+// })
 
 
 const app = createApp(App)
