@@ -19,10 +19,10 @@ onMounted(() => categoryStore.getCategory())
 
 
 <template>
-  <!-- 二级路由出口 -->
   <LayoutFixed />
   <LayoutNav />
   <LayoutHeader />
+  <!-- 二级路由出口 -->
   <RouterView />
   <LayoutFooter />
 </template>

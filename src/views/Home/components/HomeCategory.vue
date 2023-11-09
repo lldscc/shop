@@ -9,7 +9,7 @@ console.log(categoryStore);
   <div class="home-category">
     <ul class="menu">
       <li v-for="item in categoryStore.categoryList" :key="item.id">
-        <!-- 一级数据渲染 -->
+        <!-- 一级数据渲染(可以使用vue的开发者工具的Pinia查看数据) -->
         <RouterLink to="/">{{ item.name}}</RouterLink>  
         <!-- 二级数据渲染 -->
         <RouterLink v-for="i in item.children.slice(0,2)" :key="i" to="/">{{i.name}}</RouterLink>
