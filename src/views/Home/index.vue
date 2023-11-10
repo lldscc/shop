@@ -19,9 +19,7 @@ import HomePanel from './components/HomePanel.vue'
   <homeProduct />
 
   <!--  -->
-  <HomePanel title="新鲜好物" sub-title="新鲜好物">
-    <div>插槽</div>
-  </HomePanel>
+
 
   <HomePanel title="新鲜好物">
     
