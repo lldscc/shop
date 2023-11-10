@@ -7,7 +7,7 @@ const bannerList = ref([])
 // 获取轮播图数据
 const getBanner = async () => {
     const res = await getBannerAPI()
-    console.log(res);
+    // console.log(res);
     // 赋值
     bannerList.value = res.result
 }

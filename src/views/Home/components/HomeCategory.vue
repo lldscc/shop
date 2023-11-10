@@ -2,7 +2,7 @@
 // 导入数据
 import { useCategoryStore} from '@/stores/category'
 const categoryStore = useCategoryStore()
-console.log(categoryStore);
+// console.log(categoryStore);
 </script>
 
 <template>

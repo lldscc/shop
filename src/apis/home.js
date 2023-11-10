@@ -1,18 +1,35 @@
-// 获取homeBanner的轮播图数据
-import httpIntance  from '@/utils/http'
+
+import httpInstance  from '@/utils/http'
+
+/**
+ * @description: 获取轮播图的数据
+ * @param {*}
+ * @return {*}
+ */
 export function getBannerAPI(){
-    return httpIntance(
+    return httpInstance(
         {url:'/home/banner'}
     )
 }
 
 /**
- * @description: 获取新鲜好物
+ * @description: 获取新鲜好物模块的数据
  * @param {*}
  * @return {*}
  */
 export const findNewAPI = () => {
-    return httpIntance({
+    return httpInstance({
       url:'/home/new'
     })
   }
+
+/**
+ * @description: 获取人气推荐模块的数据
+ * @param {*}
+ * @return {*}
+ */
+export const getHotAPI = () => {
+  return httpInstance({
+    url:'/home/hot'
+  })
+};

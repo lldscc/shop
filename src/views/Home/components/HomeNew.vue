@@ -1,21 +1,35 @@
 <script setup>
 // 引入标题图片组件
 import HomePanel from './HomePanel.vue'
-import {findNewAPI} from '@/apis/home'
+import {findNewAPI,getHotAPI} from '@/apis/home'
 import { onMounted,ref } from 'vue'
 
 
-// 获取商品数据
+// 获取新鲜好物模块数据
 const newList = ref([])
 const getNewList = async() => {
     const res = await findNewAPI()
     newList.value = res.result
 }
 onMounted(() => getNewList())
+
+// 获取人气推荐模块数据
+
+const hotList = ref([])
+const getHotList = async () => {
+  const res = await getHotAPI()
+  // 将res.result 赋值给 hotList.value
+  hotList.value = res.result
+  console.log(res)
+}
+
+onMounted(() => getHotList())
+
+
 </script>
 
 <template>
-  <!-- HomePanel组件 -->
+  <!-- 1.HomePanel组件 新鲜好物模块-->
   <!-- Props -->
   <HomePanel title="新鲜好物" sub-title="新鲜好物 品质保证">
   <!-- 插槽 -->
@@ -28,6 +42,21 @@ onMounted(() => getNewList())
       </RouterLink>
     </li>
   </ul>
+  </HomePanel>
+
+  <!-- 2.HomePanel组件 人气推荐模块-->
+   <!-- Props -->
+   <HomePanel title="人气推荐" sub-title="人气爆款 不容错过">
+  <!-- 插槽 -->
+    <ul class="goods-list">
+        <li v-for="item in hotList" :key="item.id">
+          <RouterLink to="/">
+            <img :src="item.picture" alt="">
+            <p class="name">{{ item.title }}</p>
+            <p class="desc">{{ item.alt }}</p>
+          </RouterLink>
+        </li>
+      </ul>
   </HomePanel>
 </template>
 
