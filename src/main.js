@@ -6,11 +6,9 @@ import { createPinia } from 'pinia'
 
 import App from './App.vue'
 import router from './router'
-// 测试API
-// import { getCategory } from './apis/testAPI'
-// getCategory().then(res =>{
-//     console.log(res)
-// })
+// vueuse视口显示判断
+import { useIntersectionObserver } from '@vueuse/core'
+
 
 
 const app = createApp(App)
@@ -27,6 +25,21 @@ app.directive('img-lazy',{
         // el:指令绑定的元素 img
         // binding：指令等于号后面绑定的表达式的值 imgurl
         console.log(el,binding.value);
+
+        // 视口显示判断
+        // el为元素
+        // isIntersecting为布尔值,是否视图显示
+        useIntersectionObserver(
+            el,
+            ([{ isIntersecting }]) => {
+            console.log(isIntersecting);
+            if(isIntersecting){
+                // 加载图片
+                el.src = binding.value;
+                // 移除观察者
+                }
+            }
+        )
     }
 })
 
