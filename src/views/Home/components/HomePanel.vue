@@ -15,7 +15,7 @@
 
 
 <template>
-    <!-- 可传参，插槽的标题组件,用在HomeNew组件中 -->
+    <!-- 可传参，插槽的标题组件,用在HomeNew新鲜好物组件中 -->
   <div class="home-panel">
     <div class="container">
       <div class="head">
