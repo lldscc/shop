@@ -3,10 +3,6 @@ import { useCategoryStore } from '@/stores/category'
 
 const categoryStore = useCategoryStore()
 
-// 获取时间
-
-
-
 </script>
 
 <template>
@@ -18,7 +14,7 @@ const categoryStore = useCategoryStore()
       <ul class="app-header-nav">
         <!-- 遍历数据 -->
         <li class="home" v-for="item in categoryStore.categoryList" key="item.id">
-          <RouterLink to="/">{{item.name}}</RouterLink>
+          <RouterLink :to="`/category/${item.id}`">{{item.name}}</RouterLink>
         </li>
        
       </ul>
