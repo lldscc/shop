@@ -22,7 +22,7 @@ onMounted(() => categoryStore.getCategory())
   <LayoutFixed />
   <LayoutNav />
   <LayoutHeader />
-  <!-- 二级路由出口 -->
+  <!-- 二级路由出口，显示layout的子页面 -->
   <RouterView />
   <LayoutFooter />
 </template>

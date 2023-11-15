@@ -14,6 +14,7 @@ const categoryStore = useCategoryStore()
       <ul class="app-header-nav">
         <!-- 遍历数据 -->
         <li class="home" v-for="item in categoryStore.categoryList" key="item.id">
+          <!-- 效果：http://127.0.0.1:5173/category/1011000 -->
           <RouterLink :to="`/category/${item.id}`">{{item.name}}</RouterLink>
         </li>
        

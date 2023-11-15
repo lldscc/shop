@@ -1,15 +1,17 @@
+// home页相关接口数据
 
-import httpInstance  from '@/utils/http'
+
+import httpInstance from '@/utils/http'
 
 /**
  * @description: 获取轮播图的数据
  * @param {*}
  * @return {*}
  */
-export function getBannerAPI(){
-    return httpInstance(
-        {url:'/home/banner'}
-    )
+export function getBannerAPI() {
+  return httpInstance(
+    { url: '/home/banner' }
+  )
 }
 
 /**
@@ -18,10 +20,10 @@ export function getBannerAPI(){
  * @return {*}
  */
 export const findNewAPI = () => {
-    return httpInstance({
-      url:'/home/new'
-    })
-  }
+  return httpInstance({
+    url: '/home/new'
+  })
+}
 
 /**
  * @description: 获取人气推荐模块的数据
@@ -30,7 +32,7 @@ export const findNewAPI = () => {
  */
 export const getHotAPI = () => {
   return httpInstance({
-    url:'/home/hot'
+    url: '/home/hot'
   })
 };
 
