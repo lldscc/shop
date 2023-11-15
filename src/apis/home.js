@@ -4,13 +4,21 @@
 import httpInstance from '@/utils/http'
 
 /**
- * @description: 获取轮播图的数据
+ * @description: 获取轮播图的数据,distributionSite可传参，1为首页，2为分类商品页） 默认是1
  * @param {*}
  * @return {*}
  */
-export function getBannerAPI() {
+export function getBannerAPI(param = {}) {
+  // 默认为1
+  const { distributionSite = '1' } = param
   return httpInstance(
-    { url: '/home/banner' }
+    {
+      url: '/home/banner',
+      params: {
+        distributionSite
+      }
+
+    }
   )
 }
 

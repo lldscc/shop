@@ -9,7 +9,6 @@ import HomePanel from './components/HomePanel.vue'
 </script>
 
 <template>
-  <div><h1>Home页 /的默认子路由</h1></div>
   <div class="container">
     <HomeCategory />
     <HomeBanner />

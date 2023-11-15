@@ -11,9 +11,8 @@ const getBanner = async () => {
     // 赋值
     bannerList.value = res.result
 }
-
 onMounted(() =>getBanner())
-    
+
 
 </script>
 
