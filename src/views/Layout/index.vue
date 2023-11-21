@@ -22,8 +22,9 @@ onMounted(() => categoryStore.getCategory())
   <LayoutFixed />
   <LayoutNav />
   <LayoutHeader />
-  <!-- 二级路由出口，显示layout的子页面 -->
-  <RouterView />
+  <!-- 二级路由出口，显示layout的子页面  -->
+  <!-- :key="$route.fullPath破坏复用机制，强制销毁重建 -->
+  <RouterView :key="$route.fullPath"/>
   <LayoutFooter />
 </template>
 

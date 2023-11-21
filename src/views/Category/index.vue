@@ -2,20 +2,30 @@
 // 导入数据接口
 import {getCategoryAPI} from '@/apis/category'
 import { getBannerAPI} from "@/apis/home"
+
+import { onMounted ,ref } from 'vue';
+import { useRoute } from 'vue-router';
+
 import GoodsItem from "../Home/components/GoodsItem.vue"
 
-import { onMounted ,onUpdated,ref } from 'vue';
-import { useRoute } from 'vue-router';
+import {onBeforeRouteUpdate} from 'vue-router'
 // 获取数据,有路由参数
-const categoryData = ref([])
+const categoryData = ref({})
 const route = useRoute()
-const getCategory = async() => {
-  const res = await getCategoryAPI(route.params.id)
+const getCategory = async(id = route.params.id) => {
+  const res = await getCategoryAPI(id)
   categoryData.value = res.result
 }
-onUpdated(() => getCategory())
+onMounted(() => getCategory())
 
 
+
+
+// 目标：路由参数变化时，可以把分类页的数据重新请求
+onBeforeRouteUpdate((to)=>{
+  // console.log('路由变化');
+  getCategory(to.params.id)
+})
 // 获取轮播图数据，与Home页获取的逻辑一样，参数为2
 const bannerList = ref([])
 const getBanner = async () => {
